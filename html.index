@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم عماد الدين</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* تنسيق الساعة الرقمية */
+        .digital-clock {
+            width: 180px;
+            margin: 0 auto;
+            padding: 15px;
+            background: #000;
+            color: #00FF00;
+            font-size: 32px;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 20px;
+            top: 150px;
+        }
+
+        /* تأثيرات إضافية لجعل الساعة أكثر جاذبية */
+        .digital-clock::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00FF00, transparent);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* تصميم responsive لتناسب جميع أحجام الشاشات */
+        @media (max-width: 768px) {
+            .digital-clock {
+                font-size: 24px;
+                width: 150px;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .digital-clock {
+                font-size: 18px;
+                width: 120px;
+                padding: 8px;
+            }
+        }
+
+        /* تنسيق الزر لفتح الرابط */
+        .open-link-btn {
+            margin-top: 50px;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/2.png" alt="أيقونة" class="icon">
+        </div>
+        <h1>مطعم عماد الدين</h1>
+        <div class="header-right">
+            <button class="btn">تسجيل دخول</button>
+            <button class="btn">إنشاء حساب</button>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- إضافة الساعة الرقمية -->
+        <div class="digital-clock" id="digitalClock">
+            00:00:00
+        </div>
+
+        <!-- زر لفتح الرابط -->
+        <button class="open-link-btn" onclick="window.location.href='https://www.example.com';">
+            زيارة موقعنا
+        </button>
+
+        <!-- باقي المحتوى -->
+        <button class="branch-btn" onclick="location.href='sarmada.html'">فرع سرمدا</button>
+    </div>
+
+    <footer>
+        <div class="footer-right">
+            جميع الحقوق محفوظة
+        </div>
+        <div class="footer-left">
+            tamer &copy;
+        </div>
+    </footer>
+
+    <script>
+        // دالة لتحديث الوقت في الساعة الرقمية
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('digitalClock').textContent = timeString;
+        }
+
+        // تحديث الساعة كل ثانية
+        setInterval(updateClock, 1000);
+
+        // تشغيل الساعة فور تحميل الصفحة
+        updateClock();
+    </script>
+</body>
+</html>

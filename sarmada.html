@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم عماد الدين - فرع سرمدا</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* تنسيق قسم الأصناف */
+        .menu-item {
+            display: none; /* إخفاء العناصر مبدئيًا */
+            margin: 20px 0;
+            text-align: center;
+        }
+        .menu-item img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .menu-item p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/2.png" alt="أيقونة" class="icon">
+        </div>
+        <h1>مطعم عماد الدين - فرع سرمدا</h1>
+        <div class="header-right">
+            <!-- يمكنك ترك هذا القسم فارغًا أو إضافة عناصر أخرى إذا رغبت -->
+        </div>
+    </header>
+
+    <div class="content">
+        <p>نرحب بزبائننا الكرام في فرع سرمدا  /مفرق العامود/مستعدون لتلبية كافة الطلبات والعزلئم والولائم.</p>
+
+        <!-- زر استعراض الأصناف -->
+        <h2 id="show-menu-btn" style="cursor: pointer; color: #007BFF;" onclick="toggleMenu()">استعرض أصنافنا</h2>
+
+        <!-- قسم الأصناف -->
+        <div id="menu-items">
+            <div class="menu-item">
+                <img src="images/1.jpg" alt="صنف 1">
+                <p></p>
+            </div>
+            <div class="menu-item">
+                <img src="images/2.jpg" alt="صنف 2">
+                <p>وصف الصنف 2: طبق شهير يتميز بنكهاته الرائعة.</p>
+            </div>
+            <div class="menu-item">
+                <img src="images/3.jpg" alt="صنف 3">
+                <p>وصف الصنف 3: وجبة صحية ومغذية مناسبة للجميع.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-right">
+            فرع سرمدا
+        </div>
+        <div class="footer-left">
+        للتواصل:3526811330066+
+        </div>
+    </footer>
+
+    <script>
+        // دالة لإظهار وإخفاء الأصناف
+        function toggleMenu() {
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                if (item.style.display === 'none' || item.style.display === '') {
+                    item.style.display = 'block'; // إظهار الصنف
+                } else {
+                    item.style.display = 'none'; // إخفاء الصنف
+                }
+            });
+        }
+    </script>
+</body>
+</html>

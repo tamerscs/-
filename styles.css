@@ -1,0 +1,125 @@
+/* تصميم الصفحة */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+}
+
+/* تصميم خلفية مربعات شفافة */
+body {
+    background-color: #f9f9f9;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* تصميم الهيدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 2px -2px gray;
+    position: relative;
+}
+
+.header-left img {
+    width: 40px;
+    height: 40px;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #f05;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #d00447;
+}
+
+h1 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* تصميم المحتوى */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+p {
+    color: #555;
+}
+
+/* تصميم التذييل */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px -10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+/* تصميم زر فرع سرمدا */
+.branch-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.branch-btn:hover {
+    background-color: #0056b3;
+}
+
+/* تصميم استجابة للأحجام الصغيرة */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .header-right {
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
